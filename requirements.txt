@@ -1,0 +1,11 @@
+ 	fastapi
+uvicorn[standard]
+transformers
+torch
+mlflow
+pydantic
+datasets
+scikit-learn
+pytest
+httpx
+accelerate>=1.1.0
