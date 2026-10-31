@@ -4,3 +4,5 @@ mlruns/
 out/
 .idea/
 mlflow.db
+logs/
+build/
