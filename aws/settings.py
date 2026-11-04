@@ -27,3 +27,6 @@ TRAIN_IMAGE_URI = (
 TRAIN_INSTANCE_TYPE = "ml.m5.xlarge"  # 4 vCPU, 16 ГБ RAM
 CODE_S3_PREFIX = "code/sentiment-distilbert"  # куди класти sourcedir.tar.gz
 TRAIN_OUTPUT_S3_URI = f"s3://{BUCKET}/models/sentiment-distilbert/training-output"
+# Крок 8.5: куди ендпоінт записує захоплені запити й відповіді (data capture).
+CAPTURE_S3_PREFIX = "datacapture"
+CAPTURE_S3_URI = f"s3://{BUCKET}/{CAPTURE_S3_PREFIX}"
