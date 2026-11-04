@@ -30,3 +30,11 @@ TRAIN_OUTPUT_S3_URI = f"s3://{BUCKET}/models/sentiment-distilbert/training-outpu
 # Крок 8.5: куди ендпоінт записує захоплені запити й відповіді (data capture).
 CAPTURE_S3_PREFIX = "datacapture"
 CAPTURE_S3_URI = f"s3://{BUCKET}/{CAPTURE_S3_PREFIX}"
+# Крок 8.5: перевірка дрейфу як processing job.
+# Стандартний образ AWS для processing job (scikit-learn, Python 3); нам з нього потрібні лише Python і boto3.
+PROCESSING_IMAGE_URI = (
+    "662702820516.dkr.ecr.eu-north-1.amazonaws.com/"
+    "sagemaker-scikit-learn:1.2-1-cpu-py3"
+)
+PROCESSING_INSTANCE_TYPE = "ml.m5.large"   # 2 vCPU, 8 ГБ; квота 4 (крок 8.5.1)
+MONITORING_S3_PREFIX = "monitoring"         # звіти: monitoring/reports/<назва job>/report.json
