@@ -1,0 +1,10 @@
+# Усе для роботи на ноутбуці: сервіс + тести + тренування, MLflow, скрипти aws/ і monitoring/.
+-r requirements.txt
+pytest
+httpx
+transformers
+torch
+mlflow
+datasets
+scikit-learn
+accelerate>=1.1.0
