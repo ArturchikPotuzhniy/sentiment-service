@@ -38,3 +38,9 @@ PROCESSING_IMAGE_URI = (
 )
 PROCESSING_INSTANCE_TYPE = "ml.m5.large"   # 2 vCPU, 8 ГБ; квота 4 (крок 8.5.1)
 MONITORING_S3_PREFIX = "monitoring"         # звіти: monitoring/reports/<назва job>/report.json
+# Крок 8.6: FastAPI на ECS Express Mode (варіант B).
+ECR_REPOSITORY = "sentiment-service"                       # образ: <акаунт>.dkr.ecr.<регіон>.amazonaws.com/sentiment-service:<тег>
+ECS_SERVICE_NAME = "sentiment-service"
+ECS_EXECUTION_ROLE = "ecsTaskExecutionRole"                 # ECS: образ з ECR, логи в CloudWatch
+ECS_INFRA_ROLE = "ecsInfrastructureRoleForExpressServices"  # ECS: load balancer, security groups, автоскейлінг
+ECS_TASK_ROLE = "sentiment-service-task-role"               # код FastAPI: лише InvokeEndpoint на наш ендпоінт
